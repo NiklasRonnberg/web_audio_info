@@ -61,6 +61,10 @@ div {
   display: block;
 }
 
+#grey {
+  color: "rgba(155,155,155,1);
+}
+
 /* ===== Code blocks ===== */
 code {
   background-color: #fff;
