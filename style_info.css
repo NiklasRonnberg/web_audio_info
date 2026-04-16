@@ -1,0 +1,125 @@
+/* ===== Base ===== */
+body {
+  font-family: 'Segoe UI', sans-serif;
+  background-color: #f9f9f9;
+  color: #222;
+  margin: 0;
+  padding: 2rem;
+  line-height: 1.6;
+  max-width: 900px;
+}
+
+/* ===== Typography ===== */
+h1 {
+  font-size: 2.2rem;
+  font-weight: 700;
+  margin: 0 0 1.5rem 0;
+}
+
+h2 {
+  font-size: 1.3rem;
+  font-weight: 600;
+  border-bottom: 1px solid #ddd;
+  padding-bottom: 0.3rem;
+  margin-top: 2.5rem;
+  margin-bottom: 1rem;
+}
+
+p, ul {
+  margin-bottom: 1rem;
+}
+
+ul {
+  margin-left: 1.5rem;
+}
+
+strong {
+  font-weight: 600;
+  color: #000;
+}
+
+/* ===== Links ===== */
+a,
+a:visited {
+  color: #000;
+  text-decoration: underline;
+  transition: color 0.2s ease;
+}
+
+a:hover {
+  color: #bfbfbf;
+}
+
+/* ===== Layout (single column only) ===== */
+.top-section {
+  margin-bottom: 2.5rem;
+}
+
+/* Remove any multi-column behavior completely */
+section,
+div {
+  display: block;
+}
+
+/* ===== Code blocks ===== */
+code {
+  background-color: #fff;
+  border: 1px solid #ddd;
+  padding: 2px 6px;
+  border-radius: 4px;
+  font-family: Consolas, monospace;
+}
+
+pre {
+  background-color: #fff;
+  border: 1px solid #ddd;
+  padding: 1rem;
+  border-radius: 6px;
+  overflow-x: auto;
+  margin-bottom: 1rem;
+}
+
+/* ===== Image ===== */
+img {
+  max-width: 100%;
+  height: auto;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  margin: 1rem 0;
+  display: block;
+}
+
+/* ===== Remove old layout system completely ===== */
+.top-content,
+.bottom-section,
+.bottom-left,
+.bottom-right,
+.top-left,
+.top-right,
+.controls,
+.dropdown-button,
+.slideshow-container {
+  display: block;
+  width: 100%;
+  max-width: 100%;
+}
+
+/* ===== Sections spacing ===== */
+section {
+  margin-bottom: 2rem;
+}
+
+/* ===== Responsive (minimal now) ===== */
+@media (max-width: 600px) {
+  body {
+    padding: 1.2rem;
+  }
+
+  h1 {
+    font-size: 1.8rem;
+  }
+
+  h2 {
+    font-size: 1.1rem;
+  }
+}

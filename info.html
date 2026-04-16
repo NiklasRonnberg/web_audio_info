@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Web Audio API Notes</title>
+
+<link rel="stylesheet" href="style_info.css">
+</head>
+
+<body>
+
+<div class="top-section">
+
+    <div class="top-header">
+        <h1>Web Audio API</h1>
+    </div>
+
+    <p>
+        <a href="https://developer.mozilla.org/en-US/docs/Web/API/Web_Audio_API">
+        Web Audio API
+        </a>
+        is a powerful web-based interface for creating, processing, and playing audio directly in the browser.
+        It enables synthesis, effects, filtering, mixing, and spatial audio positioning through a node-based system called an audio graph.
+    </p>
+
+    <p>
+        All audio processing happens inside an <strong>AudioContext</strong>, which provides precise timing, routing, and control over all connected audio nodes.
+    </p>
+
+    <p>
+        The API is designed for real-time interactive systems such as music tools, generative audio, games, and sonification systems.
+    </p>
+
+</div>
+
+<section>
+
+    <h2>AudioContext</h2>
+
+    <p>
+        The <strong>AudioContext</strong> is the central object in the Web Audio API.
+        It acts as the runtime environment in which all audio nodes exist and are connected.
+    </p>
+
+    <p>
+        Without it, no audio can be generated or played.
+    </p>
+
+    <p>
+        It is typically created after a user interaction:
+    </p>
+
+    <p><code>const audioContext = new AudioContext();</code></p>
+
+</section>
+
+<section>
+
+    <h2>An Web Audio Example</h2>
+
+    <p>
+        The figure below shows the structure of a detuned synthesizer built using the Web Audio API, that is used in the traffic load sonification.
+    </p>
+
+    <img src="model.png" alt="Synth model diagram" style="max-width:100%; border:1px solid #ddd; border-radius:10px; margin-top:1rem;">
+
+</section>
+
+<section>
+
+    <h2>Detuned Synthesizer Example</h2>
+
+    <p>
+        The synthesizer uses two harmonic tones: 261.63 Hz and 392 Hz.
+        Each tone is generated using three triangle wave oscillators.
+    </p>
+
+    <p>
+        Slight detuning between oscillators creates interference patterns (beating), which thickens the sound.
+    </p>
+
+    <p>
+        A shared gain node controls overall amplitude and is smoothly ramped to avoid clicks.
+    </p>
+
+    <p>
+        The second tone is dynamically shifted using a <strong>tone2Detune</strong> parameter, allowing real-time pitch modulation.
+    </p>
+
+    <p>
+        All oscillators are connected to a single output chain:
+    </p>
+
+    <p><code>oscillators → gain → speakers</code></p>
+
+</section>
+
+<section>
+
+    <h2>Real-Time Control</h2>
+
+    <p>
+        Parameters such as gain, detune spread, and pitch offset are continuously updated using smooth interpolation.
+    </p>
+
+    <p>
+        This avoids clicks and allows expressive modulation in real time.
+    </p>
+
+</section>
+
+</body>
+</html>
