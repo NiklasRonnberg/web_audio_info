@@ -1,125 +1,144 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Web Audio and MTAI@LiU</title>
-<link rel="stylesheet" href="style_info.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Web Audio and MTAI@LiU</title>
+  <link rel="stylesheet" href="style_info.css">
 </head>
 
 <body>
 
 <div class="top-section">
 
-    <div class="top-header">
-        <h1>Web Audio and MT<span class="grey">AI</span>@LiU</h1>
+  <div class="top-header-row">
+    <h1>Web Audio and MT<span class="grey">AI</span>@LiU</h1>
+
+    <div class="course-logos">
+      tnm103.svg
+      tnm113.svg
     </div>
-    <p>
-        For students at the Master of Science in Media Technology<span class="grey">, AI and Engineering,</span> Linköping University. Web Audio API connects to the following courses:<br>
-        <ul>
-            <li><a href="https://studieinfo.liu.se/en/kurs/TNM103">TNM103 - Sound technology</a></li>
-            <li><a href="https://studieinfo.liu.se/en/kurs/TNM113">TNM113 - Procedural Sound Design for User Interfaces</a></li>
-            <li>TNMxx - Sound Design for User Experience</li>
-        </ul>
+  </div>
+
+  <p>
+    For students at the Master of Science in Media Technology<span class="grey">, AI and Engineering,</span> Linköping University. Web Audio API connects to the following courses:<br>
+    <ul>
+      <li><a href="https://studieinfo.liu.se/en/kurs/TNM103">TNM103 - Sound technology</a></li>
+      <li><a href="https://studieinfo.liu.se/en/kurs/TNM113">TNM113 - Procedural Sound Design for User Interfaces</a></li>
+      <li>TNMxx - Sound Design for User Experience</li>
+    </ul>
     The Sound technology course will be offered in the fall 2026 (first study period), 
     and Procedural Sound Design for User Interfaces will (most probably) be offered in the spring 2027 (second study period). 
     The Sound Design for User Experience is a new course combining these other two courses and will be offered from the fall 2027 (second study period).
-    </p>
-    <h2>Web Audio API</h2>
-    <p>
-        <a href="https://developer.mozilla.org/en-US/docs/Web/API/Web_Audio_API">
-        Web Audio API
-        </a>
-        is a powerful web-based interface for creating, processing, and playing audio directly in the browser.
-        It enables synthesis, effects, filtering, mixing, and spatial audio positioning through a node-based system called an audio graph.
-    </p>
-
-    <p>
-        All audio processing happens inside an <strong>AudioContext</strong>, which provides precise timing, routing, and control over all connected audio nodes.
-    </p>
-
-    <p>
-        The API is designed for real-time interactive systems such as music tools, generative audio, games, and sonification systems.
-    </p>
+  </p>
 
 </div>
 
-<section>
+<!-- TWO‑COLUMN CONTENT LAYOUT -->
+<div class="content-grid">
 
-    <h2>AudioContext</h2>
+  <!-- LEFT COLUMN -->
+  <div class="left-column">
 
-    <p>
-        The <strong>AudioContext</strong> is the central object in the Web Audio API.
-        It acts as the runtime environment in which all audio nodes exist and are connected.
-    </p>
+    <section>
+      <h2>Web Audio API</h2>
 
-    <p>
-        Without it, no audio can be generated or played.
-    </p>
+      <p>
+        <a href="https://developer.mozilla.org/en-US/docs/Web/API/Web_Audio_API">
+          Web Audio API
+        </a>
+        is a powerful web-based interface for creating, processing, and playing audio directly in the browser.
+        It enables synthesis, effects, filtering, mixing, and spatial audio positioning through a node-based system called an audio graph.
+      </p>
 
-    <p>
-        It is typically created after a user interaction:
-    </p>
+      <p>
+        All audio processing happens inside an <strong>AudioContext</strong>, which provides precise timing, routing, and control over all connected audio nodes.
+      </p>
 
-    <p><code>const audioContext = new AudioContext();</code></p>
+      <p>
+        The API is designed for real-time interactive systems such as music tools, generative audio, games, and sonification systems.
+      </p>
+    </section>
 
-</section>
+    <section>
+      <h2>An Web Audio Example</h2>
 
-<section>
-
-    <h2>An Web Audio Example</h2>
-
-    <p>
+      <p>
         The figure below shows the structure of a detuned synthesizer built using the Web Audio API, that is used in the traffic load sonification. 
         This example can be tested by selecting "Sonification of traffic levels" in the top menu, and then by selecting "Synth: ON" on the next page.
-    </p>
+      </p>
+    </section>
 
-    <img src="model.png" alt="Synth model diagram" style="max-width:100%; border:1px solid #ddd; border-radius:10px; margin-top:1rem;">
+    <section>
+      <h2>Detuned Synthesizer Example</h2>
 
-</section>
-
-<section>
-
-    <h2>Detuned Synthesizer Example</h2>
-
-    <p>
+      <p>
         The synthesizer uses two harmonic tones: 261.63 Hz and 392 Hz.
         Each tone is generated using three triangle wave oscillators.
-    </p>
+      </p>
 
-    <p>
+      <p>
         Slight detuning between oscillators creates interference patterns (beating), which thickens the sound.
-    </p>
+      </p>
 
-    <p>
+      <p>
         A shared gain node controls overall amplitude and is smoothly ramped to avoid clicks.
-    </p>
+      </p>
 
-    <p>
+      <p>
         The second tone is dynamically shifted using a <strong>tone2Detune</strong> parameter, allowing real-time pitch modulation.
-    </p>
+      </p>
 
-    <p>
+      <p>
         All oscillators are connected to a single output chain:
-    </p>
+      </p>
 
-    <p><code>oscillators → gain → speakers</code></p>
+      <p><code>oscillators → gain → speakers</code></p>
+    </section>
 
-</section>
+  </div>
 
-<section>
+  <!-- RIGHT COLUMN -->
+  <div class="right-column">
 
-    <h2>Real-Time Control</h2>
+    <section>
+      <h2>AudioContext</h2>
 
-    <p>
+      <p>
+        The <strong>AudioContext</strong> is the central object in the Web Audio API.
+        It acts as the runtime environment in which all audio nodes exist and are connected.
+      </p>
+
+      <p>
+        Without it, no audio can be generated or played.
+      </p>
+
+      <p>
+        It is typically created after a user interaction:
+      </p>
+
+      <p><code>const audioContext = new AudioContext();</code></p>
+    </section>
+
+    <section>
+      <img src="model.png" alt="Synth model diagram" style="max-width:100%; border:1px solid #ddd; border-radius:10px; margin-top:1rem;">
+    </section>
+
+    <section>
+      <h2>Real-Time Control</h2>
+
+      <p>
         Parameters such as gain, detune spread, and pitch offset are continuously updated using smooth interpolation.
-    </p>
+      </p>
 
-    <p>
+      <p>
         This avoids clicks and allows expressive modulation in real time.
-    </p>
+      </p>
+    </section>
 
-</section>
+  </div>
+
+</div>
 
 </body>
 </html>
