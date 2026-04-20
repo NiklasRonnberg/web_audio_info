@@ -59,12 +59,45 @@
     </section>
 
     <section>
+      <h2>AudioContext</h2>
+
+      <p>
+        The <strong>AudioContext</strong> is the central object in the Web Audio API.
+        It acts as the runtime environment in which all audio nodes exist and are connected.
+      </p>
+
+      <p>
+        Without it, no audio can be generated or played.
+      </p>
+
+      <p>
+        It is typically created after a user interaction:
+      </p>
+
+      <p><code>const audioContext = new AudioContext();</code></p>
+    </section>
+
+    <section>
       <h2>An Web Audio Example</h2>
 
       <p>
         The figure below shows the structure of a detuned synthesizer built using the Web Audio API, that is used in the traffic load sonification. 
         This example can be tested by selecting "Sonification of traffic levels" in the top menu, and then by selecting "Synth: ON" on the next page.
       </p>
+    </section>
+
+    <section>
+      <img src="model.png" alt="Synth model diagram" style="max-width:100%; border:1px solid #ddd; border-radius:10px; margin-top:1rem;">
+    </section>
+
+  </div>
+
+  <!-- RIGHT COLUMN -->
+  <div class="right-column">
+
+    <section>
+        <img src="tnm103.svg" alt="QR code to https://studieinfo.liu.se/en/kurs/TNM103">
+        <img src="tnm113.svg" alt="QR code to https://studieinfo.liu.se/en/kurs/TNM113">
     </section>
 
     <section>
@@ -87,39 +120,7 @@
 
       <p><code>oscillators -> gain -> speakers</code></p>
     </section>
-
-    <section>
-      <img src="model.png" alt="Synth model diagram" style="max-width:100%; border:1px solid #ddd; border-radius:10px; margin-top:1rem;">
-    </section>
-
-  </div>
-
-  <!-- RIGHT COLUMN -->
-  <div class="right-column">
-
-    <section>
-        <img src="tnm103.svg" alt="QR code to https://studieinfo.liu.se/en/kurs/TNM103">
-        <img src="tnm113.svg" alt="QR code to https://studieinfo.liu.se/en/kurs/TNM113">
-    </section>
-
-    <section>
-      <h2>AudioContext</h2>
-
-      <p>
-        The <strong>AudioContext</strong> is the central object in the Web Audio API.
-        It acts as the runtime environment in which all audio nodes exist and are connected.
-      </p>
-
-      <p>
-        Without it, no audio can be generated or played.
-      </p>
-
-      <p>
-        It is typically created after a user interaction:
-      </p>
-
-      <p><code>const audioContext = new AudioContext();</code></p>
-    </section>
+    
 
     <section>
       <h2>Real-Time Control</h2>
