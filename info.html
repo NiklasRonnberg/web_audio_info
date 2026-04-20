@@ -72,15 +72,8 @@
 
       <p>
         The synthesizer uses two harmonic tones: 261.63 Hz and 392 Hz.
-        Each tone is generated using three triangle wave oscillators.
-      </p>
-
-      <p>
+        Each tone is generated using three triangle wave oscillators. 
         Slight detuning between oscillators creates interference patterns (beating), which thickens the sound.
-      </p>
-
-      <p>
-        A shared gain node controls overall amplitude and is smoothly ramped to avoid clicks.
       </p>
 
       <p>
@@ -88,10 +81,15 @@
       </p>
 
       <p>
+        A shared gain node controls overall amplitude and is smoothly ramped to avoid clicks. 
         All oscillators are connected to a single output chain:
       </p>
 
-      <p><code>oscillators → gain → speakers</code></p>
+      <p><code>oscillators -> gain -> speakers</code></p>
+    </section>
+
+    <section>
+      <img src="model.png" alt="Synth model diagram" style="max-width:100%; border:1px solid #ddd; border-radius:10px; margin-top:1rem;">
     </section>
 
   </div>
@@ -121,10 +119,6 @@
       </p>
 
       <p><code>const audioContext = new AudioContext();</code></p>
-    </section>
-
-    <section>
-      <img src="model.png" alt="Synth model diagram" style="max-width:100%; border:1px solid #ddd; border-radius:10px; margin-top:1rem;">
     </section>
 
     <section>
